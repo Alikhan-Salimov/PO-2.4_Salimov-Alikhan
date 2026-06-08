@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SchoolApp.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="28" Spacing="18">
+            <Label
+                Text="SchoolApp"
+                FontSize="34"
+                FontAttributes="Bold"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="PO-2.4 school dashboard"
+                FontSize="18"
+                TextColor="{AppThemeBinding Light=#4B5563, Dark=#D1D5DB}" />
+
+            <Border Stroke="#D1D5DB" StrokeThickness="1" Padding="18">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="8" />
+                </Border.StrokeShape>
+                <Grid ColumnDefinitions="*,*" RowDefinitions="Auto,Auto" RowSpacing="12">
+                    <VerticalStackLayout>
+                        <Label Text="Students" FontSize="14" TextColor="#6B7280" />
+                        <Label Text="28" FontSize="28" FontAttributes="Bold" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Column="1">
+                        <Label Text="Subjects" FontSize="14" TextColor="#6B7280" />
+                        <Label Text="6" FontSize="28" FontAttributes="Bold" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Row="1">
+                        <Label Text="Teachers" FontSize="14" TextColor="#6B7280" />
+                        <Label Text="5" FontSize="28" FontAttributes="Bold" />
+                    </VerticalStackLayout>
+
+                    <VerticalStackLayout Grid.Row="1" Grid.Column="1">
+                        <Label Text="Lessons Today" FontSize="14" TextColor="#6B7280" />
+                        <Label Text="4" FontSize="28" FontAttributes="Bold" />
+                    </VerticalStackLayout>
+                </Grid>
+            </Border>
+
+            <Label Text="Today's Lessons" FontSize="22" FontAttributes="Bold" />
+
+            <VerticalStackLayout Spacing="10">
+                <Label Text="09:00 - C# and .NET" />
+                <Label Text="10:30 - Database Systems" />
+                <Label Text="12:00 - Operating Systems" />
+                <Label Text="14:00 - English" />
+            </VerticalStackLayout>
+
+            <Button
+                x:Name="StatusButton"
+                Text="Mark Day Complete"
+                Clicked="OnStatusButtonClicked"
+                HorizontalOptions="Fill" />
+
+            <Label
+                x:Name="StatusLabel"
+                Text="Status: study day in progress"
+                FontSize="16" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
